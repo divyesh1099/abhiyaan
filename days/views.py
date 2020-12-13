@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import *
 from departmentalfests.models import *
+from sports.models import Sport as S
 #-----------------------------------------------------------
 departmentalfests=DepartmentalFest.objects.all()
 #-----------------------------------------------------------
@@ -9,12 +10,12 @@ def index(request):
     days=Days.objects.all()[0]
     day=Day.objects.all()
     departments=Department.objects.all()
-
+    sports=S.objects.all()
     return render(request, "days/index.html", {
         "days": days,
         "day":day,
         "departments": departments,
-        "sports":["Kabaddi", "Kho-Kho", "Cricket", "Batminton"]
+        "sports":sports
     })
 
 def day(request, day):

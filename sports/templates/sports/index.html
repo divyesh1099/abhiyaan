@@ -22,7 +22,6 @@ Sports
       </div>
 </div>
 <div class="container">
-  <h1 class="font-weight-bold text-center">What are Sports:</h1>
   <p class="text-center ">{{ sportlist.description|safe }}</p>
 </div>
 
@@ -35,7 +34,7 @@ Sports
           <div class="card m-1 p-1">
             <a href="{% url 'sports:sport' sport %}"><h5 class="card-header font-weight-bold text-center">{{ sport.name|safe }}</h5></a>
             <img class="card-img-top" src="{{ sport.image.url }}">
-            <div class="card-body">{{ sport.description|truncatewords:150|safe }}</div>
+            <div class="card-body">{{ sport.description|truncatewords:100|safe }}</div>
           </div>
         </div>
         {% endfor %}
@@ -53,7 +52,7 @@ Sports
           <div class="card m-1 p-1">
             <a href="{% url 'sports:sport' sport %}"><h5 class="card-header font-weight-bold text-center">{{ sport.name|safe }}</h5></a>
             <img class="card-img-top" src="{{ sport.image.url }}">
-            <div class="card-body">{{ sport.description|truncatewords:150|safe }}</div>
+            <div class="card-body">{{ sport.description|truncatewords:90|safe }}</div>
           </div>
         </div>
         {% endfor %}

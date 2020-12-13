@@ -12,22 +12,8 @@ def index(request):
         "sports":["Kabaddi", "Kho-Kho", "Cricket", "Batminton"]
     })
 
-def maineventsdaytwo(request, daytwo):
-    oday=Daytwo.objects.all()
-    days=MainDayTwo.objects.all()
-    tday=Daytwo.objects.get(name=daytwo)
-    events=Event.objects.all()
 
-    return render(request, "maineventsdaytwo/maineventsdaytwo.html", {
-        "days": days,
-        "day": oday,
-        "tday":tday,
-        "events": events,
-        "departmentalfests": ["CSE", "IT", "EXTC", "ME", "CE"],
-        "sports":["Kabaddi", "Kho-Kho", "Cricket", "Batminton"]
-    })
-
-def event(request, daytwo, event):
+def event(request, event):
     days=MainDayTwo.objects.all()[0]
     oday=Daytwo.objects.all()
     tday=Daytwo.objects.get(name=daytwo)

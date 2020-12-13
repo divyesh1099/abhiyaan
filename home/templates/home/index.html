@@ -1,10 +1,23 @@
 {% extends "home/layout.html" %}
 {% block title %}
-Abhiyaan
-{% endblock title %}
+Home
+{% endblock %}
 {% block body %}
-<div class="jumbotron">
-    <h1>ABHIYAAN HOME PAGE</h1>
-    <p>HELLO USER</p>
-</div>
-{% endblock body %}
+<main>
+  <section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-light">ABHIYAAN</h1>
+        <p class="lead text-muted">It is the annual festival of our college wherein we do all that can be described as entertainment.It has a footall of over 3K+ students from 6 departments of BVCOENM. It is a wholesome experience of arts culture and unity in all differrent forms.</p>
+        <p>
+          <a href="{% url 'maineventsdayone:index' %}" class="btn btn-primary my-2">Main Day Events</a>
+        </p>
+      </div>
+    </div>
+  </section>
+</main>
+
+
+
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+{% endblock %}

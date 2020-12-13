@@ -1,0 +1,35 @@
+{% extends "home/layout.html" %}
+{% block title %}
+{{ door }}
+{% endblock title %}
+{% block body %}
+<div class="jumbotron d-flex justify-content-center m-0 p-3">
+  <h1 class="display-2 font-weight-bold">{{ door|upper }} SPORTS</h1>
+</div>
+
+<div class="container">
+  <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+      {% for sport in tsports %}
+      <li data-target="#carouselExampleCaptions" data-slide-to="{{ forloop.counter }}"></li>
+      {% endfor %}
+    </ol>
+    <div class="carousel-inner">
+    {% for sport in tsports %}
+      <div class="carousel-item">
+        <img src="{{ sport.image.url }}" class="d-block daysCarousel w-100" alt="...">
+      </div>
+    </div>
+    {% endfor %}
+    <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div>
+{% endblock body %}

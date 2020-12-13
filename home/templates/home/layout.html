@@ -61,7 +61,7 @@
                   <span class="sr-only">Toggle Dropdown</span>
                 </button>
                 <div class="dropdown-menu">
-                  <a href="{% url 'maineventsdayone:index' %}" class="dropdown-item">Day 1</a>
+                  <a href="{% url 'maineventsdayone:index'  %}" class="dropdown-item">Day 1</a>
                   <a href="{% url 'maineventsdaytwo:index' %}" class="dropdown-item">Day 2</a>
                   <a href="{% url 'maineventsdaythree:index' %}" class="dropdown-item">Day 3</a>
                 </div>
@@ -75,9 +75,8 @@
                   <span class="sr-only">Toggle Dropdown</span>
                 </button>
                 <div class="dropdown-menu">
-                  {% for sport in sports %}
-                  <a class="dropdown-item" href="{% url 'sports:sport' sport %}">{{ sport }}</a>
-                  {% endfor %}
+                  <a class="dropdown-item" href="{% url 'sports:isport' %}">Indoor</a>
+                  <a class="dropdown-item" href="{% url 'sports:osport' %}">Outdoor</a>
                 </div>
               </div>
             </li>

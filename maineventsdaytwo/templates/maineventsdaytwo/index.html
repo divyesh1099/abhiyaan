@@ -27,13 +27,13 @@ Main Day Events|Day 2
 </div>
 <div class="container">
   <div class="row m-1">
-    {% for aday in day %}
+    {% for aday in events %}
     <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
       <div class="card img-thumbnail" style="width: 18rem;">
-        <img class="card-img-top" src="{{ aday.imageOne.url }}" alt="Card image cap">
+        <img class="card-img-top" src="{{ aday.image.url }}" alt="Card image cap">
         <div class="card-body">
-          <a href="{% url 'maineventsdaytwo:maineventsdaytwo' aday %}"><h5 class="card-title">{{ aday.name|safe }}</h5></a>
-          <p class="card-text">{{ aday.description|truncatewords:30|safe }}<a href="{% url 'maineventsdaytwo:maineventsdaytwo' aday %}">...</h5></a></p>
+          <a href="{% url 'maineventsdaytwo:event' aday %}"><h5 class="card-title">{{ aday.name|safe }}</h5></a>
+          <p class="card-text">{{ aday.description|truncatewords:30|safe }}<a href="{% url 'maineventsdaytwo:event' aday %}">...</h5></a></p>
         </div>
       </div>
     </div>

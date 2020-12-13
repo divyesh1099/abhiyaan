@@ -15,6 +15,7 @@ class Event(models.Model):
     eventhead      =  models.CharField(max_length=1000)
     rules          =  models.TextField(blank=True)    
     registrationform= models.CharField(max_length=1000, blank=True)
+    payment        =  models.CharField(max_length=1000, blank=True)
 
     def __str__(self):
         return remove_html_tags(self.name)
